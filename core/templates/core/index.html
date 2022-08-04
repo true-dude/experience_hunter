@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title  %}Index{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static "core/css/index.css" %}">
+{% endblock %}
+
+{% block content %}
+    <img src="https://wallpapercave.com/wp/wp5984922.jpg" width=300 alt="pikcha">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">Anton </div>
+            <div class="col-4">Pasha</div>
+            {% for i in some_list %}
+            <div class="col-4">
+                <h4 class="centr">Mountains bla bla bla bla dsffsdfsdfsdf</h4>
+                <p class="top-det">
+                <img class="fig" src="https://icdn.lenta.ru/images/2021/04/27/16/20210427163138131/detail_9b31eaf4376cdff03e0ba1bcaa826a01.jpg" alt="pikcha"><br><hr>George
+            fsdfgdhf ghfghgfh ffffffffffff ffffffff ffffffffff ffggfhghfg hgfhfghgggg gggggggggggg gggggggggg gggggggg ggggggggg ggggggggg
+            ghhhhhhh hhhhhhhhhhhhhhh hhhhh hhhhhhhhhh hhhhhhhhhh hhhhh hhhhhhhhhhh hhhhhhhh hhhhhhhhh hhhhhhh hhhhhhh hhhhh hhhh
+            ghhhh hhhhhhhh hhhhhhhhhhh hhhhhhh hhhhhhhh hhhhhhhh hhhhhhhh hhhhhh hhhhhh hhhhhhh hhhhh hhhhhhhh hhhhhh hhhh hhh hhhh hhf
+            ghhh hhhhhh hhhhhhh hhhhhhhhh hhhhfhg fffffff fff fffffhh hhhhh hhhhh hhhhh ggg ggg ggggg ggggg gggg gggggg gg</p></div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-8">{% include "core/topic_list.html" %}</div>
+            <div class="col-4">{% include "core/category.html" %}</div>
+        </div>
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-primary">Left</button>
+      <button type="button" class="btn btn-primary">Middle</button>
+      <button type="button" class="btn btn-primary">Right</button>
+    </div>
+
+{% endblock %}

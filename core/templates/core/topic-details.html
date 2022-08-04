@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h4><a href="#">{{ topic.title }}</a></h4>
+    <h6>Раздел: ({{ topic.categories.count }}): {% for category in topic.categories.all %}{{ category.title }}{% if not forloop.last %}, {% endif %}{% endfor %}</h6>
+    <p>{{ topic.body }}</p>
+{% endblock %}

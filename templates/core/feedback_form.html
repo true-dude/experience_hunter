@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+        <h1>Отзыв о красивом месте</h1>
+        <form method="post" enctype="multipart/form-data" action="{% url "feedback-creat" %}">
+            {% csrf_token %}
+            {{ form }}
+            <input id="feedback-submit" type="submit">
+        </form>
+    </div>
+{% endblock %}

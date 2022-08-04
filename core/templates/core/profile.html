@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% block profile %}
+        <div class="profile">
+            <a class="profile-btn btn btn-outline-info" href="{% url "logout" %}">Выход</a>
+        </div>
+    {% endblock %}
+    <h1>Вы в профиле! Поздравляю!</h1>
+    <p>username: {{ user.username }}</p>
+{% endblock %}

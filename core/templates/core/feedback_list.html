@@ -1,0 +1,25 @@
+{% load methods %}
+<img src="fox.jpg">
+<div class="feedback-list container">
+    <div class="row">
+        {% for feedback in feedbacks %}
+            <div class="card" style="width: 18rem;">
+                <img src="../../..{{ feedback.img.url }}" class="card-img-top" alt="Картинка" height="250" width="350">
+                <div class="card-body">
+                    <h5 class="card-title">{{ feedback.location_name|cut:20 }}</h5>
+                    <p class="card-text">{{ feedback.description|cut:100 }}</p>
+                    <p>{{ feedback.city|cut:20 }}</p>
+                    <a href="{% url "feedback_details" feedback.pk %}" class="btn btn-primary">Подробнее</a>
+              </div>
+            </div>
+            <!--<div class="feedback-list__item col-4">
+                <h4 class="location-name">{{ feedback.location_name|cut:20 }}</h4>
+                <img class="place-img" src="../../..{{ feedback.img.url }}" height="300" width="300">
+                <br>
+                <p>{{ feedback.description|cut:100 }}</p>
+                <p>{{ feedback.city|cut:20 }}</p>
+                <h5><a href="{% url "feedback_details" feedback.pk %}" class="btn btn-info">Подробнее</a></h5>
+            </div> -->
+        {% endfor %}
+    </div>
+</div>

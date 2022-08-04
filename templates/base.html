@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%  block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-5.0.2-dist/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "core/css/base.css" %}">
+    {%  block styles %}{% endblock %}
+
+    <script type="text/javascript" src="{% static "jquery/jquery-3.6.0.min.js" %}"></script>
+    <script type="text/javascript" src="{% static "bootstrap-5.0.2-dist/js/bootstrap.min.js" %}"></script>
+    {% block scripts %}{%  endblock %}
+
+</head>
+<body>
+    {% block nav %}
+        <nav class="navigation navbar navbar-expand-lg bg-dark">
+          <div class="container">
+            <a class="navbar-brand" href="{% url "home" %}">Охотник за впечатлениями</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+
+              </ul>
+              <form class="d-flex" action="{% url "home" %}">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+                <button class="btn btn-outline-success" type="submit">Найти</button>
+              </form>
+            </div>
+              {% block profile %}
+                  <div class="profile">
+                      <a class="profile-btn btn btn-outline-info" href="{% url "profile" %}">{% if user %}{{ user }}{% else %}Профиль{% endif %}</a>
+                  </div>
+              {% endblock %}
+              {% block add_content %}
+                  <div class="add_content">
+                    <a class="profile-btn btn btn-outline-info" href="{% url "feedback-creat" %}">Добавить место</a>
+                  </div>
+              {% endblock %}
+          </div>
+        </nav>
+    {% endblock %}
+    {% block content %}{% endblock %}
+    <hr>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li>Казанское СВУ</li>
+                        <li>Всего хо-ро-ше-го</li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <ul>
+                        <li>Петров Аркадий</li>
+                        <li>Ляля Вагизовна</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

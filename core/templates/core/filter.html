@@ -1,0 +1,23 @@
+<form action="{% url "home" %}" method="get">
+    <ul>
+        <h6>Теги местоположения</h6>
+        {% for city in cities %}
+            <li>
+                <input type="checkbox" name="city" value="{{ city }}">
+                <span>{{ city }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    <!--
+    <ul>
+        <h6>Теги категории</h6>
+        {% for category in categories %}
+            <li>
+                <input type="checkbox" name="category" value="{{ category }}">
+                <span>{{ category }}</span>
+            </li>
+        {% endfor %}
+    </ul>
+    -->
+    <button type="submit">Найти</button>
+</form>

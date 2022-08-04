@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>{{ feedback.location_name }}</h1>
+        <img src="../../..{{ feedback.img.url }}" height="500">
+        <br>
+        <p>{{ feedback.description }}</p>
+        <p>{{ feedback.city }}</p>
+        <p>{{ feedback.way }}</p>
+    </div>
+{% endblock %}
